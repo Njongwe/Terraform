@@ -3,5 +3,5 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my_s3_bucket" {
-  bucket = "terraform-demo-oliver-2026"
+  bucket = "terraform-demo-oliver-2026-${timestamp()}"
 }
