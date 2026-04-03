@@ -3,5 +3,9 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my_s3_bucket" {
-  bucket = "terraform-demo-oliver-2026-${timestamp()}"
+  bucket = "terraform-demo-oliver-2026-${formatdate("YYYYMMDDhhmmss", timestamp())}"
+}
+
+output "bucket_name" {
+  value = aws_s3_bucket.my_s3_bucket.bucket
 }
